@@ -1,111 +1,174 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
-  <title>CV - Dariusz Kisiel</title>
-  <meta name="description" content="CV Dariusz Kisiel - informatyk">
-  <meta name="author" content="Dariusz Kisiel">
-  <link rel="icon" href="./img/ikonka.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <title>Dariusz Kisiel | IT / Cybersecurity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #0a0a0a;
+      color: #00ff9f;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      border-bottom: 2px solid #00ff9f;
+      padding-bottom: 10px;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid #00ff9f;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .box {
+      background: #111;
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid #00ff9f33;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #00ff9f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: 1px solid #00ff9f;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #00ff9f;
+      color: #000;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <div>
-      <img src="./img/profil.png" alt="Zdjęcie profilowe"/>
+
+  <div class="container">
+
+    <header style="text-align:center">
+      <h1>Dariusz Kisiel</h1>
+      <p>Informatyka | Sieci | Cybersecurity | DevOps</p>
+    </header>
+
+    <div class="box">
+      <h2>O mnie</h2>
+      <p>
+        Student informatyki na KUL, zainteresowany administracją systemów,
+        bezpieczeństwem oraz rozwiązaniami sieciowymi. Rozwijam się w kierunku
+        DevOps oraz cyberbezpieczeństwa, zdobywając doświadczenie poprzez projekty
+        praktyczne i pracę z systemami Linux.
+      </p>
     </div>
-    <h1>Dariusz Kisiel</h1>
-    <section>
-      <p>Szukam możliwości zdobycia doświadczenia w zawodzie informatyka lub programisty.</p>
-      <p><strong>Data urodzenia:</strong> 20.07.2004</p>
-      <p><strong>Miejscowość:</strong> Lublin</p>
-      <p><strong>E-mail:</strong> dariuszkisiel2004@int.pl</p>
-      <p><strong>Telefon:</strong> 452-852-869</p>
-    </section>
-  </header>
 
-  <main>
-    <section>
-      <h3>Wykształcenie</h3>
-      <article>
-        <div class='school'>
-          <span>10.2024 – obecnie</span> <strong>Katolicki Uniwersytet Lubelski (KUL)</strong>
-        </div>
-        <div>
-          Kierunek: Informatyka <br>
-          Poziom wykształcenia: studia licencjackie
-        </div>
-      </article>
-      <br>
-      <article>
-        <div class='school'>
-          <span>09.2019 – 04.2024</span> <strong>Zespół Szkół Zawodowych nr 1 i II LO</strong>
-        </div>
-        <div>
-          Specjalizacja: Technik informatyk <br>
-          Poziom wykształcenia: zawodowe
-        </div>
-      </article>
-    </section>
-
-    <section>
-      <h3>Doświadczenie</h3>
-      <article>
-        <div class='job-title'>
-          <span>06.2022 – 04.2024</span> <strong>Wolontariat - Biblioteka we Włodawie</strong><br> <strong>Stanowisko:</strong> Administrator witryny
-        </div>
-        <ul class="job-description">
-          <li>Administracja witryny bibliotecznej</li>
-          <li>Konserwacja sprzętu komputerowego</li>
-          <li>Pomoc użytkownikom w obsłudze komputera</li>
-        </ul>
-      </article>
-      <article>
-        <div class='job-title'>
-          <span>02.05.2022 – 27.05.2022</span> <strong>Zespół Szkół w Sławatyczach</strong><br> <strong>Stanowisko:</strong> Praktykant techniczny 
-        </div>
-        <ul class="job-description">
-          <li>Diagnozowanie i naprawa sprzętu komputerowego, instalowanie systemów i konfigurowanie oprogramowania.</li>
-          <li>Projektowanie sieci komputerowych, dobór sprzętu i analiza zapotrzebowania na przepustowość.</li>
-          <li>Konfiguracja usług sieciowych, montaż okablowania i udostępnianie urządzeń w sieci lokalnej.</li>
-          </ul>
-      </article>
-    </section>
-
-    <section>
-      <h3>Umiejętności</h3>
-      <div class='skills'>
-        <div class='column'>
-          <ul>
-            <li>Linux</li>
-            <li>Administracja sieciami komputerowymi</li>
-            <li>Administracja serwerami (Linux/Windows)</li>
-            <li>MS Office</li>
-          </ul>
-        </div>
-        <div class='column'>
-          <ul>
-            <li>Windows</li>
-            <li>Serwery WWW</li>
-            <li>Linux Serwer</li>
-            <li>Windows Serwer</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h3>Języki</h3>
+    <div class="box">
+      <h2>Umiejętności</h2>
       <ul>
-        <li>🇵🇱 Polski – język ojczysty</li>
-        <li>🇬🇧 Angielski – średnio zaawansowany</li>
-        <li>🇷🇺 Rosyjski – podstawowy</li>
+        <li>Linux</li>
+        <li>Administracja sieciami komputerowymi</li>
+        <li>Administracja serwerami (Linux / Windows)</li>
+        <li>Serwery WWW</li>
+        <li>MS Office</li>
+        <li>Windows</li>
+        <li>Python (skrypty, automatyzacja)</li>
+        <li>Git / GitHub</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h3>Zainteresowania</h3>
+    <div class="box">
+      <h2>Certyfikaty</h2>
+      <ul>
+        <li>Introduction to Cybersecurity (Cisco)</li>
+        <li>Introduction to IoT (Cisco)</li>
+        <li>Introduction to Data Science</li>
+        <li>Linux Unhatched</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h2>Wykształcenie</h2>
+      <p><strong>10.2024 – obecnie</strong> — Katolicki Uniwersytet Lubelski (KUL)<br>Kierunek: Informatyka — studia
+        licencjackie</p>
+      <p><strong>09.2019 – 04.2024</strong> — Zespół Szkół Zawodowych nr 1 i II LO<br>Specjalizacja: Technik informatyk
+        — wykształcenie zawodowe</p>
+    </div>
+
+    <div class="box">
+      <h2>Doświadczenie</h2>
+      <p><strong>06.2022 – 04.2024</strong> — Wolontariat, Biblioteka we Włodawie<br><em>Stanowisko:</em> Administrator
+        witryny</p>
+      <ul>
+        <li>Administracja witryny bibliotecznej</li>
+        <li>Konserwacja sprzętu komputerowego</li>
+        <li>Pomoc użytkownikom w obsłudze komputera</li>
+      </ul>
+      <p><strong>02.05.2022 – 27.05.2022</strong> — Zespół Szkół w Sławatyczach<br><em>Stanowisko:</em> Praktykant
+        techniczny</p>
+      <ul>
+        <li>Diagnozowanie i naprawa sprzętu komputerowego; instalacja systemów i konfiguracja oprogramowania</li>
+        <li>Projektowanie sieci komputerowych, dobór sprzętu i analiza zapotrzebowania na przepustowość</li>
+        <li>Konfiguracja usług sieciowych, montaż okablowania i udostępnianie urządzeń w sieci lokalnej</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Języki</h2>
+      <ul>
+        <li>Polski — język ojczysty</li>
+        <li>Angielski — średnio zaawansowany</li>
+        <li>Rosyjski — podstawowy</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Zainteresowania</h2>
       <ul>
         <li>Informatyka śledcza</li>
         <li>Pentestowanie</li>
@@ -114,12 +177,31 @@
         <li>Administracja sieciami komputerowymi</li>
         <li>Fotografia</li>
         <li>Obróbka grafiki</li>
-		    <li>Wolne oprogramowanie</li>
+        <li>Wolne oprogramowanie</li>
       </ul>
-    </section>
-  </main>
-  <footer>
-    <p>CV-Dariusz Kisiel | 2025</p>
-  </footer>
+    </div>
+    <div class="box">
+      <h2>Dokumenty</h2>
+      <a href="Dariusz Kisiel.pdf" class="btn">Pobierz CV (PDF)</a>
+    </div>
+
+    <div class="box">
+      <h2>Kontakt</h2>
+      <p>Email: <a href="mailto:dariuszkisiel2004@int.pl">dariuszkisiel2004@int.pl</a></p>
+      <p>Numer telefonu: <a href="tel:+48452852869">+48 452 852 869</a></p>
+      <p>GitHub: <a href="https://github.com/xBestia2004" target="_blank" rel="noopener">xBestia2004</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/dariusz-kisiel/" target="_blank" rel="noopener">Dariusz
+          Kisiel</a></p>
+      <p>Signal: <a href="https://signal.me/#eu/RQl0Veo3lxTSor6KWxZNe6UpcrI6F-BjgRt2Ny65YxQTJtc5RpZPHJWw8x5Lh8df"
+          target="_blank" rel="noopener">bestia.64</a></p>
+    </div>
+
+    <footer>
+      <p>© 2026 Dariusz Kisiel</p>
+    </footer>
+
+  </div>
+
 </body>
+
 </html>
