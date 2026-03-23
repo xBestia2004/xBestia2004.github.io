@@ -87,6 +87,47 @@
       font-size: 12px;
       opacity: 0.5;
     }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .cert-item {
+      background: #1a1a1a;
+      border: 1px solid #00ff9f33;
+      padding: 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+      text-align: left;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cert-item:hover {
+      border-color: #00ff9f;
+      background: #222;
+      transform: translateY(-2px);
+    }
+
+    .cert-item span {
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .cert-link {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid #00ff9f;
+      padding: 4px 8px;
+      display: inline-block;
+      width: fit-content;
+    }
   </style>
 </head>
 
@@ -124,13 +165,68 @@
     </div>
 
     <div class="box">
-      <h2>Certyfikaty</h2>
-      <ul>
-        <li>Introduction to Cybersecurity (Cisco)</li>
-        <li>Introduction to IoT (Cisco)</li>
-        <li>Introduction to Data Science</li>
-        <li>Linux Unhatched</li>
-      </ul>
+      <h2>Certyfikaty Cisco</h2>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <span>Cyber Threat Management</span>
+          <a href="Certyfikaty_Cisco/Cyber%20Threat%20Management.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Digital Safety and Security Awareness</span>
+          <a href="Certyfikaty_Cisco/Digital%20Safety%20and%20Security%20Awareness.pdf" target="_blank"
+            class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Exploring Networking with Cisco Packet Tracer</span>
+          <a href="Certyfikaty_Cisco/Exploring%20Networking%20with%20Cisco%20Packet%20Tracer.pdf" target="_blank"
+            class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Introduction to Cybersecurity</span>
+          <a href="Certyfikaty_Cisco/Introduction%20to%20Cybersecurity.pdf" target="_blank" class="cert-link">Zobacz
+            PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Introduction to Data Science</span>
+          <a href="Certyfikaty_Cisco/Introduction%20to%20Data%20Science.pdf" target="_blank" class="cert-link">Zobacz
+            PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Introduction to IoT and Digital Transformation</span>
+          <a href="Certyfikaty_Cisco/Introduction%20to%20IoT%20and%20Digital%20Transformation.pdf" target="_blank"
+            class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Introduction to Modern AI</span>
+          <a href="Certyfikaty_Cisco/Introduction%20to%20Modern%20AI.pdf" target="_blank" class="cert-link">Zobacz
+            PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Linux Essentials</span>
+          <a href="Certyfikaty_Cisco/Linux%20Essentials.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Linux Unhatched</span>
+          <a href="Certyfikaty_Cisco/Linux%20Unhatched.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Network Technician Career Path Exam</span>
+          <a href="Certyfikaty_Cisco/Network%20Technician%20Career%20Path%20Exam.pdf" target="_blank"
+            class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Networking Basics</span>
+          <a href="Certyfikaty_Cisco/Networking%20Basics.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Python Essentials 1</span>
+          <a href="Certyfikaty_Cisco/Python%20Essentials%201.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
+        </div>
+        <div class="cert-item">
+          <span>Python Essentials 2</span>
+          <a href="Certyfikaty_Cisco/Python%20Essentials%202.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
+        </div>
+      </div>
     </div>
     <div class="box">
       <h2>Wykształcenie</h2>
@@ -190,7 +286,7 @@
       <p>Email: <a href="mailto:dariuszkisiel2004@int.pl">dariuszkisiel2004@int.pl</a></p>
       <p>Numer telefonu: <a href="tel:+48452852869">+48 452 852 869</a></p>
       <p>GitHub: <a href="https://github.com/xBestia2004" target="_blank" rel="noopener">xBestia2004</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/dariusz-kisiel/" target="_blank" rel="noopener">Dariusz
+      <p>Linkedin: <a href="https://www.linkedin.com/in/dariusz-kisiel/" target="_blank" rel="noopener">Dariusz
           Kisiel</a></p>
       <p>Signal: <a href="https://signal.me/#eu/RQl0Veo3lxTSor6KWxZNe6UpcrI6F-BjgRt2Ny65YxQTJtc5RpZPHJWw8x5Lh8df"
           target="_blank" rel="noopener">bestia.64</a></p>
