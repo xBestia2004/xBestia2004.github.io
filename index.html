@@ -1,303 +1,222 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
   <meta charset="UTF-8">
-  <title>Dariusz Kisiel | IT / Cybersecurity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Dariusz Kisiel | Linux, sieci i automatyzacja IT</title>
+  <meta name="description" content="Dariusz Kisiel — administrator systemów Linux i sieci, specjalista automatyzacji IT, cyberbezpieczeństwa i DevOps z Lublina.">
+  <meta name="author" content="Dariusz Kisiel">
+  <meta name="theme-color" content="#07110e">
+  <link rel="canonical" href="https://xbestia2004.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Dariusz Kisiel | Linux, sieci i automatyzacja IT">
+  <meta property="og:description" content="Administracja systemami Linux, sieci, automatyzacja IT, cyberbezpieczeństwo i DevOps.">
+  <meta property="og:url" content="https://xbestia2004.github.io/">
+  <meta property="og:site_name" content="Dariusz Kisiel — portfolio IT">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Dariusz Kisiel","url":"https://xbestia2004.github.io/","email":"mailto:dariuszkisiel@wilczysprzet.pl","telephone":"+48 573 819 180","jobTitle":"Administrator systemów Linux i automatyzacji IT","sameAs":["https://github.com/xBestia2004","https://www.linkedin.com/in/dariusz-kisiel/"]}
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    :root {
+      color-scheme: dark;
+      --bg: #07110e;
+      --panel: #0d1915;
+      --panel-strong: #12231d;
+      --text: #d9f7e9;
+      --muted: #9ab9aa;
+      --accent: #00e58f;
+      --accent-strong: #62ffc1;
+      --border: rgba(0, 229, 143, .25);
+      --shadow: 0 18px 50px rgba(0, 0, 0, .25);
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
       margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background: #0a0a0a;
-      color: #00ff9f;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(0, 229, 143, .09), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
+    a { color: var(--accent-strong); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { color: #fff; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+    .skip-link { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 10px 14px; background: var(--accent); color: #001b10; }
+    .skip-link:focus { top: 12px; }
+    .container { width: min(100% - 32px, 1020px); margin-inline: auto; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 17, 14, .9);
+      backdrop-filter: blur(14px);
     }
+    .nav-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { color: var(--accent); font-weight: 800; letter-spacing: .06em; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; font-size: .9rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--accent-strong); }
 
-    h1 {
-      font-size: 42px;
-      border-bottom: 2px solid #00ff9f;
-      padding-bottom: 10px;
+    .hero { padding: 90px 0 55px; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; }
+    h1, h2, h3 { line-height: 1.18; color: #fff; }
+    h1 { max-width: 820px; margin: 14px 0 20px; font-size: clamp(2.2rem, 7vw, 4.8rem); letter-spacing: -.055em; }
+    h2 { font-size: clamp(1.55rem, 4vw, 2.25rem); margin: 0 0 20px; }
+    h2::before { content: "> "; color: var(--accent); }
+    .lead { max-width: 760px; margin: 0; font-family: system-ui, sans-serif; color: var(--muted); font-size: clamp(1.05rem, 2.2vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 17px; border: 1px solid var(--accent); border-radius: 7px; color: var(--accent-strong); text-decoration: none; font-weight: 700; transition: transform .18s ease, background .18s ease, color .18s ease; }
+    .btn:hover { transform: translateY(-2px); background: var(--accent); color: #001b10; }
+    .btn.primary { background: var(--accent); color: #001b10; }
+    .btn.primary:hover { background: var(--accent-strong); }
+
+    main { padding-bottom: 70px; }
+    section { margin-top: 26px; padding: clamp(24px, 5vw, 42px); background: linear-gradient(145deg, rgba(18, 35, 29, .92), rgba(11, 24, 19, .92)); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); }
+    .section-intro { max-width: 760px; color: var(--muted); font-family: system-ui, sans-serif; }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 24px; }
+    .tech { padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
+    .tech strong { display: block; color: var(--accent-strong); margin-bottom: 5px; }
+    .tech span { color: var(--muted); font-family: system-ui, sans-serif; font-size: .92rem; }
+
+    .timeline { display: grid; gap: 22px; }
+    .entry { padding-left: 20px; border-left: 2px solid var(--accent); }
+    .entry h3 { margin: 0 0 5px; font-size: 1.08rem; }
+    .meta { color: var(--accent); font-size: .88rem; }
+    .entry ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-family: system-ui, sans-serif; }
+
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 20px; }
+    .cert-item { display: flex; flex-direction: column; justify-content: space-between; min-height: 130px; padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
+    .cert-item a { width: fit-content; margin-top: 14px; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
+    details { margin-top: 18px; padding: 14px 16px; border: 1px dashed var(--border); border-radius: 9px; }
+    summary { cursor: pointer; color: var(--accent-strong); font-weight: 700; }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 22px; }
+    .contact-item { padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
+    .contact-item small { display: block; color: var(--muted); margin-bottom: 6px; }
+    footer { padding: 24px 0 50px; color: var(--muted); text-align: center; font-size: .82rem; }
+
+    @media (max-width: 720px) {
+      .nav-inner { align-items: flex-start; padding: 13px 0; }
+      .nav-links { max-width: 250px; gap: 5px 13px; }
+      .hero { padding-top: 58px; }
+      section { border-radius: 10px; }
     }
-
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid #00ff9f;
-      white-space: nowrap;
-      animation: typing 3s steps(40, end), blink .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0
-      }
-
-      to {
-        width: 100%
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent
-      }
-    }
-
-    .box {
-      background: #111;
-      padding: 20px;
-      margin-top: 20px;
-      border: 1px solid #00ff9f33;
-      border-radius: 8px;
-    }
-
-    a {
-      color: #00ff9f;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      border: 1px solid #00ff9f;
-      border-radius: 5px;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #00ff9f;
-      color: #000;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      opacity: 0.5;
-    }
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .cert-item {
-      background: #1a1a1a;
-      border: 1px solid #00ff9f33;
-      padding: 12px;
-      border-radius: 6px;
-      transition: 0.3s;
-      text-align: left;
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .cert-item:hover {
-      border-color: #00ff9f;
-      background: #222;
-      transform: translateY(-2px);
-    }
-
-    .cert-item span {
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .cert-link {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border: 1px solid #00ff9f;
-      padding: 4px 8px;
-      display: inline-block;
-      width: fit-content;
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
-
 <body>
-
-  <div class="container">
-
-    <header style="text-align:center">
-      <h1>Dariusz Kisiel</h1>
-      <p>Informatyka | Sieci | Cybersecurity | DevOps</p>
-    </header>
-
-    <div class="box">
-      <h2>O mnie</h2>
-      <p>
-        Student informatyki na KUL, zainteresowany administracją systemów,
-        bezpieczeństwem oraz rozwiązaniami sieciowymi. Rozwijam się w kierunku
-        DevOps oraz cyberbezpieczeństwa, zdobywając doświadczenie poprzez projekty
-        praktyczne i pracę z systemami Linux.
-      </p>
-    </div>
-
-    <div class="box">
-      <h2>Umiejętności</h2>
-      <ul>
-        <li>Linux</li>
-        <li>Administracja sieciami komputerowymi</li>
-        <li>Administracja serwerami (Linux / Windows)</li>
-        <li>Serwery WWW</li>
-        <li>MS Office</li>
-        <li>Windows</li>
-        <li>Python (skrypty, automatyzacja)</li>
-        <li>Git / GitHub</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h2>Certyfikaty Cisco</h2>
-      <div class="cert-grid">
-        <div class="cert-item">
-          <span>Cyber Threat Management</span>
-          <a href="Certyfikaty_Cisco/Cyber%20Threat%20Management.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Digital Safety and Security Awareness</span>
-          <a href="Certyfikaty_Cisco/Digital%20Safety%20and%20Security%20Awareness.pdf" target="_blank"
-            class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Exploring Networking with Cisco Packet Tracer</span>
-          <a href="Certyfikaty_Cisco/Exploring%20Networking%20with%20Cisco%20Packet%20Tracer.pdf" target="_blank"
-            class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Introduction to Cybersecurity</span>
-          <a href="Certyfikaty_Cisco/Introduction%20to%20Cybersecurity.pdf" target="_blank" class="cert-link">Zobacz
-            PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Introduction to Data Science</span>
-          <a href="Certyfikaty_Cisco/Introduction%20to%20Data%20Science.pdf" target="_blank" class="cert-link">Zobacz
-            PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Introduction to IoT and Digital Transformation</span>
-          <a href="Certyfikaty_Cisco/Introduction%20to%20IoT%20and%20Digital%20Transformation.pdf" target="_blank"
-            class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Introduction to Modern AI</span>
-          <a href="Certyfikaty_Cisco/Introduction%20to%20Modern%20AI.pdf" target="_blank" class="cert-link">Zobacz
-            PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Linux Essentials</span>
-          <a href="Certyfikaty_Cisco/Linux%20Essentials.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Linux Unhatched</span>
-          <a href="Certyfikaty_Cisco/Linux%20Unhatched.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Network Technician Career Path Exam</span>
-          <a href="Certyfikaty_Cisco/Network%20Technician%20Career%20Path%20Exam.pdf" target="_blank"
-            class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Networking Basics</span>
-          <a href="Certyfikaty_Cisco/Networking%20Basics.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Python Essentials 1</span>
-          <a href="Certyfikaty_Cisco/Python%20Essentials%201.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
-        </div>
-        <div class="cert-item">
-          <span>Python Essentials 2</span>
-          <a href="Certyfikaty_Cisco/Python%20Essentials%202.pdf" target="_blank" class="cert-link">Zobacz PDF</a>
-        </div>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <nav aria-label="Główna nawigacja">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">DK://</a>
+      <div class="nav-links">
+        <a href="#technologie">Technologie</a>
+        <a href="#doswiadczenie">Doświadczenie</a>
+        <a href="#certyfikaty">Certyfikaty</a>
+        <a href="#kontakt">Kontakt</a>
       </div>
     </div>
-    <div class="box">
-      <h2>Wykształcenie</h2>
-      <p><strong>10.2024 – obecnie</strong> — Katolicki Uniwersytet Lubelski (KUL)<br>Kierunek: Informatyka — studia
-        licencjackie</p>
-      <p><strong>09.2019 – 04.2024</strong> — Zespół Szkół Zawodowych nr 1 i II LO<br>Specjalizacja: Technik informatyk
-        — wykształcenie zawodowe</p>
-    </div>
+  </nav>
 
-    <div class="box">
-      <h2>Doświadczenie</h2>
-      <p><strong>06.2022 – 04.2024</strong> — Wolontariat, Biblioteka we Włodawie<br><em>Stanowisko:</em> Administrator
-        witryny</p>
-      <ul>
-        <li>Administracja witryny bibliotecznej</li>
-        <li>Konserwacja sprzętu komputerowego</li>
-        <li>Pomoc użytkownikom w obsłudze komputera</li>
-      </ul>
-      <p><strong>02.05.2022 – 27.05.2022</strong> — Zespół Szkół w Sławatyczach<br><em>Stanowisko:</em> Praktykant
-        techniczny</p>
-      <ul>
-        <li>Diagnozowanie i naprawa sprzętu komputerowego; instalacja systemów i konfiguracja oprogramowania</li>
-        <li>Projektowanie sieci komputerowych, dobór sprzętu i analiza zapotrzebowania na przepustowość</li>
-        <li>Konfiguracja usług sieciowych, montaż okablowania i udostępnianie urządzeń w sieci lokalnej</li>
-      </ul>
+  <header class="container hero" id="top">
+    <div class="eyebrow">Linux · sieci · automatyzacja · bezpieczeństwo</div>
+    <h1>Buduję i administruję systemami IT, które mają działać stabilnie.</h1>
+    <p class="lead">Nazywam się Dariusz Kisiel. Łączę administrację systemami Linux i Windows, sieci komputerowe, automatyzację w Pythonie oraz praktyczne podejście do cyberbezpieczeństwa i DevOps.</p>
+    <div class="actions">
+      <a class="btn primary" href="#technologie">Zobacz technologie</a>
+      <a class="btn" href="https://github.com/xBestia2004" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn" href="#kontakt">Kontakt</a>
     </div>
+  </header>
 
-    <div class="box">
-      <h2>Języki</h2>
-      <ul>
-        <li>Polski — język ojczysty</li>
-        <li>Angielski — średnio zaawansowany</li>
-        <li>Rosyjski — podstawowy</li>
-      </ul>
-    </div>
+  <main class="container" id="main">
+    <section id="technologie">
+      <h2>Technologie</h2>
+      <p class="section-intro">Koncentruję się na utrzymaniu infrastruktury, automatyzacji powtarzalnych zadań i rozwiązywaniu realnych problemów użytkowników oraz firm.</p>
+      <div class="tech-grid">
+        <div class="tech"><strong>Linux i serwery</strong><span>Administracja systemami, usługi WWW, diagnostyka i utrzymanie.</span></div>
+        <div class="tech"><strong>Sieci</strong><span>Projektowanie, konfiguracja usług sieciowych i analiza przepustowości.</span></div>
+        <div class="tech"><strong>Python i automatyzacja</strong><span>Skrypty operacyjne, integracje i ograniczanie pracy ręcznej.</span></div>
+        <div class="tech"><strong>Cybersecurity</strong><span>Bezpieczna konfiguracja, analiza zagrożeń i higiena cyfrowa.</span></div>
+        <div class="tech"><strong>DevOps</strong><span>Git, GitHub, wdrożenia, monitoring i powtarzalne procesy.</span></div>
+        <div class="tech"><strong>Windows</strong><span>Administracja stacjami i serwerami, konfiguracja oraz wsparcie użytkowników.</span></div>
+      </div>
+    </section>
 
-    <div class="box">
-      <h2>Zainteresowania</h2>
-      <ul>
-        <li>Informatyka śledcza</li>
-        <li>Pentestowanie</li>
-        <li>Linux</li>
-        <li>Administracja systemów serwerowych</li>
-        <li>Administracja sieciami komputerowymi</li>
-        <li>Fotografia</li>
-        <li>Obróbka grafiki</li>
-        <li>Wolne oprogramowanie</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h2>Dokumenty</h2>
-      <a href="Dariusz Kisiel.pdf" class="btn">Pobierz CV (PDF)</a>
-    </div>
+    <section id="doswiadczenie">
+      <h2>Doświadczenie i edukacja</h2>
+      <div class="timeline">
+        <article class="entry">
+          <div class="meta">10.2024 – obecnie</div>
+          <h3>Informatyka — Katolicki Uniwersytet Lubelski</h3>
+          <p class="section-intro">Studia licencjackie rozwijające kompetencje z administracji, programowania, sieci i bezpieczeństwa.</p>
+        </article>
+        <article class="entry">
+          <div class="meta">06.2022 – 04.2024</div>
+          <h3>Administrator witryny — Biblioteka we Włodawie</h3>
+          <ul><li>Administracja witryną biblioteczną.</li><li>Konserwacja sprzętu komputerowego.</li><li>Wsparcie użytkowników w obsłudze komputerów.</li></ul>
+        </article>
+        <article class="entry">
+          <div class="meta">05.2022</div>
+          <h3>Praktykant techniczny — Zespół Szkół w Sławatyczach</h3>
+          <ul><li>Diagnozowanie i naprawa sprzętu oraz instalacja systemów.</li><li>Projektowanie sieci i dobór urządzeń.</li><li>Konfiguracja usług sieciowych i infrastruktury lokalnej.</li></ul>
+        </article>
+        <article class="entry">
+          <div class="meta">09.2019 – 04.2024</div>
+          <h3>Technik informatyk — Zespół Szkół Zawodowych nr 1 i II LO</h3>
+        </article>
+      </div>
+    </section>
 
-    <div class="box">
+    <section id="certyfikaty">
+      <h2>Wybrane certyfikaty Cisco</h2>
+      <div class="cert-grid">
+        <div class="cert-item"><strong>Linux Essentials</strong><a href="Certyfikaty_Cisco/Linux%20Essentials.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+        <div class="cert-item"><strong>Cyber Threat Management</strong><a href="Certyfikaty_Cisco/Cyber%20Threat%20Management.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+        <div class="cert-item"><strong>Network Technician Career Path Exam</strong><a href="Certyfikaty_Cisco/Network%20Technician%20Career%20Path%20Exam.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+        <div class="cert-item"><strong>Python Essentials 2</strong><a href="Certyfikaty_Cisco/Python%20Essentials%202.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+        <div class="cert-item"><strong>Introduction to Cybersecurity</strong><a href="Certyfikaty_Cisco/Introduction%20to%20Cybersecurity.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+      </div>
+      <details>
+        <summary>Pokaż pozostałe certyfikaty</summary>
+        <div class="cert-grid">
+          <div class="cert-item"><strong>Digital Safety and Security Awareness</strong><a href="Certyfikaty_Cisco/Digital%20Safety%20and%20Security%20Awareness.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Exploring Networking with Cisco Packet Tracer</strong><a href="Certyfikaty_Cisco/Exploring%20Networking%20with%20Cisco%20Packet%20Tracer.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Introduction to Data Science</strong><a href="Certyfikaty_Cisco/Introduction%20to%20Data%20Science.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Introduction to IoT and Digital Transformation</strong><a href="Certyfikaty_Cisco/Introduction%20to%20IoT%20and%20Digital%20Transformation.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Introduction to Modern AI</strong><a href="Certyfikaty_Cisco/Introduction%20to%20Modern%20AI.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Linux Unhatched</strong><a href="Certyfikaty_Cisco/Linux%20Unhatched.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Networking Basics</strong><a href="Certyfikaty_Cisco/Networking%20Basics.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+          <div class="cert-item"><strong>Python Essentials 1</strong><a href="Certyfikaty_Cisco/Python%20Essentials%201.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
+        </div>
+      </details>
+    </section>
+
+    <section id="kontakt">
       <h2>Kontakt</h2>
-      <p>Email: <a href="mailto:dariuszkisiel2004@int.pl">dariuszkisiel2004@int.pl</a></p>
-      <p>Numer telefonu: <a href="tel:+48452852869">+48 452 852 869</a></p>
-      <p>GitHub: <a href="https://github.com/xBestia2004" target="_blank" rel="noopener">xBestia2004</a></p>
-      <p>Linkedin: <a href="https://www.linkedin.com/in/dariusz-kisiel/" target="_blank" rel="noopener">Dariusz
-          Kisiel</a></p>
-      <p>Signal: <a href="https://signal.me/#eu/RQl0Veo3lxTSor6KWxZNe6UpcrI6F-BjgRt2Ny65YxQTJtc5RpZPHJWw8x5Lh8df"
-          target="_blank" rel="noopener">bestia.64</a></p>
-    </div>
+      <p class="section-intro">Masz temat związany z administracją, siecią, bezpieczeństwem albo automatyzacją? Napisz lub zadzwoń.</p>
+      <div class="contact-grid">
+        <div class="contact-item"><small>E-mail</small><a href="mailto:dariuszkisiel@wilczysprzet.pl">dariuszkisiel@wilczysprzet.pl</a></div>
+        <div class="contact-item"><small>Telefon</small><a href="tel:+48573819180">+48 573 819 180</a></div>
+        <div class="contact-item"><small>GitHub</small><a href="https://github.com/xBestia2004" target="_blank" rel="noopener noreferrer">github.com/xBestia2004</a></div>
+        <div class="contact-item"><small>LinkedIn</small><a href="https://www.linkedin.com/in/dariusz-kisiel/" target="_blank" rel="noopener noreferrer">Dariusz Kisiel</a></div>
+      </div>
+      <div class="actions"><a class="btn" href="Dariusz%20Kisiel.pdf">Pobierz CV (PDF)</a></div>
+    </section>
+  </main>
 
-    <footer>
-      <p>© 2026 Dariusz Kisiel</p>
-    </footer>
-
-  </div>
-
+  <footer class="container">© 2026 Dariusz Kisiel · Lublin</footer>
 </body>
-
 </html>
