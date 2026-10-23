@@ -31,13 +31,15 @@
       --accent-strong: #62ffc1;
       --border: rgba(0, 229, 143, .25);
       --shadow: 0 18px 50px rgba(0, 0, 0, .25);
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
       margin: 0;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: var(--sans);
       background:
         radial-gradient(circle at 15% 0%, rgba(0, 229, 143, .09), transparent 34rem),
         var(--bg);
@@ -50,7 +52,7 @@
 
     .skip-link { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 10px 14px; background: var(--accent); color: #001b10; }
     .skip-link:focus { top: 12px; }
-    .container { width: min(100% - 32px, 1020px); margin-inline: auto; }
+    .container { width: min(100% - 32px, 1120px); margin-inline: auto; }
 
     nav {
       position: sticky;
@@ -61,54 +63,70 @@
       backdrop-filter: blur(14px);
     }
     .nav-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { color: var(--accent); font-weight: 800; letter-spacing: .06em; text-decoration: none; }
-    .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; font-size: .9rem; }
+    .brand { color: var(--accent); font-family: var(--mono); font-weight: 800; letter-spacing: .06em; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; font-family: var(--mono); font-size: .84rem; }
     .nav-links a { color: var(--muted); text-decoration: none; }
     .nav-links a:hover { color: var(--accent-strong); }
 
-    .hero { padding: 90px 0 55px; }
-    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; }
+    .hero { padding: 88px 0 64px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); align-items: center; gap: clamp(34px, 7vw, 80px); }
+    .eyebrow { color: var(--accent); font-family: var(--mono); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; }
+    .availability { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 20px; padding: 7px 11px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: rgba(0, 229, 143, .05); font-family: var(--mono); font-size: .76rem; }
+    .availability::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
     h1, h2, h3 { line-height: 1.18; color: #fff; }
-    h1 { max-width: 820px; margin: 14px 0 20px; font-size: clamp(2.2rem, 7vw, 4.8rem); letter-spacing: -.055em; }
-    h2 { font-size: clamp(1.55rem, 4vw, 2.25rem); margin: 0 0 20px; }
+    h1 { max-width: 820px; margin: 14px 0 20px; font-size: clamp(2.35rem, 6.3vw, 4.65rem); letter-spacing: -.06em; }
+    h2 { font-size: clamp(1.55rem, 4vw, 2.25rem); margin: 0 0 20px; letter-spacing: -.035em; }
     h2::before { content: "> "; color: var(--accent); }
-    .lead { max-width: 760px; margin: 0; font-family: system-ui, sans-serif; color: var(--muted); font-size: clamp(1.05rem, 2.2vw, 1.25rem); }
+    .lead { max-width: 720px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2.2vw, 1.2rem); }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 17px; border: 1px solid var(--accent); border-radius: 7px; color: var(--accent-strong); text-decoration: none; font-weight: 700; transition: transform .18s ease, background .18s ease, color .18s ease; }
     .btn:hover { transform: translateY(-2px); background: var(--accent); color: #001b10; }
     .btn.primary { background: var(--accent); color: #001b10; }
     .btn.primary:hover { background: var(--accent-strong); }
+    .terminal { overflow: hidden; border: 1px solid var(--border); border-radius: 13px; background: #050b09; box-shadow: 0 24px 65px rgba(0, 0, 0, .4); transform: rotate(1deg); }
+    .terminal-bar { display: flex; align-items: center; gap: 7px; padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,.07); background: #101b17; }
+    .terminal-dot { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; }
+    .terminal-dot:nth-child(2) { background: #febc2e; }
+    .terminal-dot:nth-child(3) { background: #28c840; }
+    .terminal-title { margin-left: auto; color: #6f8b7e; font-family: var(--mono); font-size: .68rem; }
+    .terminal-body { padding: 20px; color: #b9d4c7; font-family: var(--mono); font-size: .8rem; line-height: 1.85; }
+    .prompt { color: var(--accent); }
+    .command { color: #fff; }
+    .terminal-output { color: #77998a; }
 
     main { padding-bottom: 70px; }
-    section { margin-top: 26px; padding: clamp(24px, 5vw, 42px); background: linear-gradient(145deg, rgba(18, 35, 29, .92), rgba(11, 24, 19, .92)); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); }
-    .section-intro { max-width: 760px; color: var(--muted); font-family: system-ui, sans-serif; }
+    section { position: relative; overflow: hidden; margin-top: 26px; padding: clamp(24px, 5vw, 44px); background: linear-gradient(145deg, rgba(18, 35, 29, .92), rgba(11, 24, 19, .92)); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); }
+    section::after { content: attr(data-index); position: absolute; top: 18px; right: 24px; color: rgba(98,255,193,.08); font-family: var(--mono); font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; line-height: 1; pointer-events: none; }
+    .section-intro { max-width: 760px; color: var(--muted); }
     .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 24px; }
-    .tech { padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
-    .tech strong { display: block; color: var(--accent-strong); margin-bottom: 5px; }
-    .tech span { color: var(--muted); font-family: system-ui, sans-serif; font-size: .92rem; }
+    .tech { padding: 18px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+    .tech:hover { transform: translateY(-3px); border-color: rgba(0,229,143,.55); background: rgba(0,229,143,.05); }
+    .tech strong { display: block; color: var(--accent-strong); margin-bottom: 5px; font-family: var(--mono); font-size: .93rem; }
+    .tech span { color: var(--muted); font-size: .92rem; }
 
-    .timeline { display: grid; gap: 22px; }
-    .entry { padding-left: 20px; border-left: 2px solid var(--accent); }
+    .timeline { display: grid; gap: 14px; }
+    .entry { padding: 18px 20px; border-left: 2px solid var(--accent); background: rgba(0,0,0,.13); border-radius: 0 9px 9px 0; }
     .entry h3 { margin: 0 0 5px; font-size: 1.08rem; }
-    .meta { color: var(--accent); font-size: .88rem; }
-    .entry ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-family: system-ui, sans-serif; }
+    .meta { color: var(--accent); font-family: var(--mono); font-size: .8rem; }
+    .entry ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); }
 
     .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 20px; }
-    .cert-item { display: flex; flex-direction: column; justify-content: space-between; min-height: 130px; padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
+    .cert-item { display: flex; flex-direction: column; justify-content: space-between; min-height: 130px; padding: 18px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
     .cert-item a { width: fit-content; margin-top: 14px; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
     details { margin-top: 18px; padding: 14px 16px; border: 1px dashed var(--border); border-radius: 9px; }
     summary { cursor: pointer; color: var(--accent-strong); font-weight: 700; }
 
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 22px; }
     .contact-item { padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0, 0, 0, .16); }
-    .contact-item small { display: block; color: var(--muted); margin-bottom: 6px; }
-    footer { padding: 24px 0 50px; color: var(--muted); text-align: center; font-size: .82rem; }
+    .contact-item small { display: block; color: var(--muted); margin-bottom: 6px; font-family: var(--mono); }
+    footer { padding: 24px 0 50px; color: var(--muted); text-align: center; font-family: var(--mono); font-size: .82rem; }
 
     @media (max-width: 720px) {
       .nav-inner { align-items: flex-start; padding: 13px 0; }
       .nav-links { max-width: 250px; gap: 5px 13px; }
-      .hero { padding-top: 58px; }
+      .hero { grid-template-columns: 1fr; padding-top: 58px; }
+      .terminal { transform: none; }
       section { border-radius: 10px; }
+      section::after { right: 14px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -131,18 +149,32 @@
   </nav>
 
   <header class="container hero" id="top">
-    <div class="eyebrow">Linux · sieci · automatyzacja · bezpieczeństwo</div>
-    <h1>Buduję i administruję systemami IT, które mają działać stabilnie.</h1>
-    <p class="lead">Nazywam się Dariusz Kisiel. Łączę administrację systemami Linux i Windows, sieci komputerowe, automatyzację w Pythonie oraz praktyczne podejście do cyberbezpieczeństwa i DevOps.</p>
-    <div class="actions">
-      <a class="btn primary" href="#technologie">Zobacz technologie</a>
-      <a class="btn" href="https://github.com/xBestia2004" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="btn" href="#kontakt">Kontakt</a>
+    <div>
+      <div class="availability">Lublin · praca lokalna i zdalna</div>
+      <div class="eyebrow">Linux · sieci · automatyzacja · bezpieczeństwo</div>
+      <h1>Buduję systemy IT, które po prostu działają.</h1>
+      <p class="lead">Nazywam się Dariusz Kisiel. Administruję systemami Linux i Windows, rozwiązuję problemy sieciowe oraz automatyzuję powtarzalną pracę — od serwera po stanowisko użytkownika.</p>
+      <div class="actions">
+        <a class="btn primary" href="#technologie">Poznaj mój stack</a>
+        <a class="btn" href="https://github.com/xBestia2004" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="btn" href="#kontakt">Porozmawiajmy</a>
+      </div>
+    </div>
+    <div class="terminal" aria-label="Terminal prezentujący specjalizacje">
+      <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">dariusz@portfolio:~</span></div>
+      <div class="terminal-body">
+        <div><span class="prompt">$</span> <span class="command">whoami</span></div>
+        <div class="terminal-output">administrator / automatyk / technik IT</div><br>
+        <div><span class="prompt">$</span> <span class="command">cat specjalizacje.txt</span></div>
+        <div class="terminal-output">Linux · sieci · Python · DevOps</div><br>
+        <div><span class="prompt">$</span> <span class="command">systemctl is-active podejscie</span></div>
+        <div class="terminal-output">active — diagnoza → rozwiązanie → monitoring</div>
+      </div>
     </div>
   </header>
 
   <main class="container" id="main">
-    <section id="technologie">
+    <section id="technologie" data-index="01">
       <h2>Technologie</h2>
       <p class="section-intro">Koncentruję się na utrzymaniu infrastruktury, automatyzacji powtarzalnych zadań i rozwiązywaniu realnych problemów użytkowników oraz firm.</p>
       <div class="tech-grid">
@@ -155,14 +187,10 @@
       </div>
     </section>
 
-    <section id="doswiadczenie">
+    <section id="doswiadczenie" data-index="02">
       <h2>Doświadczenie i edukacja</h2>
+      <p class="section-intro">Praktyka techniczna, utrzymanie witryn i bezpośrednia praca z użytkownikami — uzupełnione formalną edukacją informatyczną.</p>
       <div class="timeline">
-        <article class="entry">
-          <div class="meta">10.2024 – obecnie</div>
-          <h3>Informatyka — Katolicki Uniwersytet Lubelski</h3>
-          <p class="section-intro">Studia licencjackie rozwijające kompetencje z administracji, programowania, sieci i bezpieczeństwa.</p>
-        </article>
         <article class="entry">
           <div class="meta">Współpraca</div>
           <h3>Administrator serwisu — <a href="https://muzycznegwiazdy.pl/" target="_blank" rel="noopener noreferrer">muzycznegwiazdy.pl</a></h3>
@@ -187,10 +215,15 @@
           <div class="meta">09.2019 – 04.2024</div>
           <h3>Technik informatyk — Zespół Szkół Zawodowych nr 1 i II LO</h3>
         </article>
+        <article class="entry">
+          <div class="meta">10.2024 – obecnie</div>
+          <h3>Informatyka — Katolicki Uniwersytet Lubelski</h3>
+          <p class="section-intro">Studia licencjackie rozwijające kompetencje z administracji, programowania, sieci i bezpieczeństwa.</p>
+        </article>
       </div>
     </section>
 
-    <section id="certyfikaty">
+    <section id="certyfikaty" data-index="03">
       <h2>Wybrane certyfikaty Cisco</h2>
       <div class="cert-grid">
         <div class="cert-item"><strong>Linux Essentials</strong><a href="Certyfikaty_Cisco/Linux%20Essentials.pdf" target="_blank" rel="noopener noreferrer">Zobacz PDF</a></div>
@@ -214,7 +247,7 @@
       </details>
     </section>
 
-    <section id="kontakt">
+    <section id="kontakt" data-index="04">
       <h2>Kontakt</h2>
       <p class="section-intro">Masz temat związany z administracją, siecią, bezpieczeństwem albo automatyzacją? Napisz lub zadzwoń.</p>
       <div class="contact-grid">
@@ -227,6 +260,6 @@
     </section>
   </main>
 
-  <footer class="container">© 2026 Dariusz Kisiel · Lublin</footer>
+  <footer class="container">© 2026 Dariusz Kisiel · Lublin · <a href="#top">Wróć na górę ↑</a></footer>
 </body>
 </html>
